@@ -66,8 +66,8 @@ function movement() { //middle function to make objects to be passed below
 
 function tree(thePass) { // see how you used "thePass"
 
-	if (treeData.height === "" || treeData.character === "") {
-		alert("Must have a value for the 'Height' field ");
+	if (thePass.height === "" || thePass.character === "") {
+		alert("Come on...How can you build a tree without a height or value defined...please define both fields. ");
 	}
 
 	var christmasTree = "";
@@ -78,4 +78,5 @@ function tree(thePass) { // see how you used "thePass"
 	}
 	console.log(christmasTree);
 	console.log("Where the presents go");
+	console.log("Objects selected: ", treeData);
 }
