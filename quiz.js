@@ -47,23 +47,28 @@ var characterField = document.getElementById("character");
 characterField.addEventListener("keypress", handleKeyPress);
 
 
+
 function handleKeyPress(e){	 // when you press enter instead of click, had to add the function name to both the input tags
- var key=e.keyCode;
-  if (key==13){
-  	movement();
+  var key=e.keyCode;
+  	if (key==13){
+  	  movement();
   }
 }
 
+var treeData = {}; // needs to be globally defined not related to the function movement
 
 function movement() { //middle function to make objects to be passed below
-		 var treeData = {};
-		 treeData.height = heightField.value;
-		 treeData.character = characterField.value;
-	   tree(treeData);
+	treeData.height = heightField.value;
+	treeData.character = characterField.value;
+	tree(treeData);
 }
 
 
 function tree(thePass) { // see how you used "thePass"
+
+	if (treeData.height === "" || treeData.character === "") {
+		alert("Must have a value for the 'Height' field ");
+	}
 
 	var christmasTree = "";
 
