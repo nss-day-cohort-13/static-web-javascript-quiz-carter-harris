@@ -34,7 +34,6 @@
 console.log("Where the star goes");
 
 
-
 // Get a reference to the button element in the DOM
 var button = document.getElementById("growButton"); // made the converter button a var
 // Assign a function to be executed when the button is clicked
@@ -48,35 +47,37 @@ characterField.addEventListener("keypress", handleKeyPress);
 
 
 
-function handleKeyPress(e){	 // when you press enter instead of click, had to add the function name to both the input tags
-  var key=e.keyCode;
-  	if (key==13){
-  	  movement();
+function handleKeyPress(e) { // when you press enter instead of click, had to add the function name to both the input tags
+  var key = e.keyCode;
+  if (key == 13) {
+    movement();
   }
 }
 
-var treeData = {}; // needs to be globally defined not related to the function movement
+
+
+// var treeData = {}; // needs to be globally defined not related to the function movement
 
 function movement() { //middle function to make objects to be passed below
-	treeData.height = heightField.value;
-	treeData.character = characterField.value;
-	tree(treeData);
+	var treeData = {}; // needs to be globally defined not related to the function movement
+  treeData.height = heightField.value;
+  treeData.character = characterField.value;
+  tree(treeData);
 }
+
 
 
 function tree(thePass) { // see how you used "thePass"
 
-	if (thePass.height === "" || thePass.character === "") {
-		alert("Come on...How can you build a tree without a height or value defined...please define both fields. ");
-	}
+  if (thePass.height === "" || thePass.character === "") {
+    alert("Come on...How can you build a tree without a height or value defined...please define both fields. ");
+  }
 
-	var christmasTree = "";
+  var christmasTree = "";
 
-	for (var i = 0; i < thePass.height; i++)
-	{
-		christmasTree += " ".repeat(thePass.height - i - 1) + thePass.character.repeat((i + 1) + i) + '\n';
-	}
-	console.log(christmasTree);
-	console.log("Where the presents go");
-	console.log("Objects selected: ", treeData);
+  for (var i = 0; i < thePass.height; i++) {
+    christmasTree += " ".repeat(thePass.height - i - 1) + thePass.character.repeat((i + 1) + i) + '\n';
+  }
+  console.log(christmasTree);
+  console.log("Where the presents go");
 }
