@@ -56,10 +56,9 @@ function handleKeyPress(e) { // when you press enter instead of click, had to ad
 
 
 
-// var treeData = {}; // needs to be globally defined not related to the function movement
 
 function movement() { //middle function to make objects to be passed below
-	var treeData = {}; // needs to be globally defined not related to the function movement
+	var treeData = {};
   treeData.height = heightField.value;
   treeData.character = characterField.value;
   tree(treeData);
